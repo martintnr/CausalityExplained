@@ -80,12 +80,12 @@ Causality_Explained <- function(CutOff = 5e-08, DataPath, Outcomes, NBCores = 1,
     row.names(Outcome) <- Outcome$SNPid
 
     # Phecode category restriction
-    phecodes <- fread(DataPath,"PheCodeExclusion_updated.txt", data.table = FALSE) # File provided by Iain and Aine to filter out phecodes similar to the outcome
+    phecodes <- fread(paste0(DataPath,"PheCodeExclusion_updated.txt"), data.table = FALSE) # File provided by Iain and Aine to filter out phecodes similar to the outcome
     phecodes <- phecodes$Phecode[phecodes$Trait == gsub("\\.txt", "", outcome)]
     phecodes <- unique(gsub("([0-9]+)(\\.[0-9]*)", "\\1", phecodes))
     if(length(phecodes) > 0)
       phecodes <- grep(paste0("^", phecodes, "\\.*.*", collapse = "|"), gsub("(PheCode_0*)([0-9\\.]+)(_Beta)", "\\2", grep("_Beta", colnames(UKBBData_AllSNPs), value = TRUE)), value = TRUE)
-    phecodesDef <- fread(DataPath,"phenotype-information.txt", data.table = FALSE)
+    phecodesDef <- fread(paste0(DataPath,"phenotype-information.txt"), data.table = FALSE)
 
     ########## Restriction to phecodes outside of cat
     row.names(UKBBData_AllSNPs) <- SNPs$SNPid

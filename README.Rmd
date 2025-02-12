@@ -31,9 +31,9 @@ library(CausalityExplained)
 setwd("where/you/want/CausalityExplained")
 
 system("wget -O Data.zip  https://zenodo.org/records/14860110/files/Data.zip?download=1")
-system("unzip Data.zip -d Data && rm Data.zip")
+system("unzip Data.zip && rm Data.zip")
 
-res <- getR2(CutOff = 5e-08, DataPath = "Data/",
+Results <- CausalityExplained::Causality_Explained(CutOff = 5e-08, DataPath = "Data/",
        Outcomes <- c("CAD_CARDIoGRAMplusC4D.txt"),
        NBCores = 1, BonferroniCorrection = F)
 ```
