@@ -1,12 +1,17 @@
-
-# Definition of the function getR2() that runs the pipeline for all outputs with a given set of predictors from the Data*.R scripts. Basically getR2 takes three arguments
-## CutOff: which is the cutoff set to select IVs
-## OutcomePath: folder containing the outcome summary stats
-## NBCores: number of cores to run the pipeline in parallel
-## BonferroniCorrection: if TRUE, apply a Bonferroni correction
-## MinNbrIVs: The minimum number of significant IVs to use the trait as a predictor
-
-Causality_Explained <- function(CutOff = 5*10^-8, DataPath, Outcomes, NBCores = 30, BonferroniCorrection = F, MinNbrIVs = 1){
+#' Main function of Causality Explained
+#'
+#' @param CutOff which is the cutoff set to select IVs
+#' @param DataPath folder containing the data (predictors, outcomes, information tables)
+#' @param Outcomes outcomes to process
+#' @param NBCores number of cores to run the pipeline in parallel
+#' @param BonferroniCorrection if TRUE, apply a Bonferroni correction on predictor selection
+#' @param MinNbrIVs The minimum number of significant IVs to use the trait as a predictor
+#'
+#' @return
+#' @export
+#'
+#' @examples
+Causality_Explained <- function(CutOff = 5*10^-8, DataPath, Outcomes, NBCores = 1, BonferroniCorrection = F, MinNbrIVs = 1){
 
 
   "%^%" <- function(x, n) with(eigen(x), vectors %*% (values^n * t(vectors)))

@@ -1,11 +1,15 @@
 Package: CausalityExplained
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Title: Explaining diseases causality using an extensive panel of traits
+Version: 0.1.0
+Authors@R: person("Martin", "Tournaire", email = "martin.tournaire@u-paris.fr",
+                  role = c("aut", "cre"))
+Description:
 Encoding: UTF-8
+Imports:
+    data.table,
+    parallel
+Depends: 
+    R (>= 2.10)
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
+License: GPL (>= 3)
