@@ -3,7 +3,7 @@ Title: Explaining diseases causality using an extensive panel of traits
 Version: 0.1.0
 Authors@R: person("Martin", "Tournaire", email = "martin.tournaire@u-paris.fr",
                   role = c("aut", "cre"))
-Description:
+Description: Causality Explained takes as input a set of predictor and an outcome, and outputs how much causality of the outcome the predictors explain
 Encoding: UTF-8
 Imports:
     data.table,
