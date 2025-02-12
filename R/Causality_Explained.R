@@ -11,12 +11,12 @@
 #' @export
 #'
 #' @examples
-Causality_Explained <- function(CutOff = 5*10^-8, DataPath, Outcomes, NBCores = 1, BonferroniCorrection = F, MinNbrIVs = 1){
+Causality_Explained <- function(CutOff = 5e-08, DataPath, Outcomes, NBCores = 1, BonferroniCorrection = F, MinNbrIVs = 1){
 
 
   "%^%" <- function(x, n) with(eigen(x), vectors %*% (values^n * t(vectors)))
 
-  # Get data preprocessed
+  # Get predictor data preprocessed
   load(paste0(DataPath,"AllData_UKBB_", CutOff))
 
 
