@@ -111,7 +111,7 @@ Causality_Explained <- function(CutOff = 5e-08, DataPath, Outcomes, NBCores = 1,
     Outcome <- Outcome[ ! is.na(Outcome$Beta), ]
 
     GWlist <- abs(UKBBData_AllSNPsO[, grep("Beta", colnames(UKBBData_AllSNPsO))] / UKBBData_AllSNPsO[, grep("Sd", colnames(UKBBData_AllSNPsO))])> qnorm(CutOff/2, lower.tail = FALSE)
-    GWlist <- melt(GWlist)
+    GWlist <- reshape2::melt(GWlist)
     GWlist <- GWlist[GWlist$value, 1:2]
     colnames(GWlist) <- c("SNP", "PheCode")
 
