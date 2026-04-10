@@ -37,3 +37,10 @@ Results <- CausalityExplained::Causality_Explained(CutOff = 5e-08, DataPath = "D
        Outcomes <- c("CAD_CARDIoGRAMplusC4D.txt"),
        NBCores = 1, BonferroniCorrection = F)
 ```
+
+## Results
+
+The results presented in the preprint corresponds to the metric predR2 with method PCselect.
+
+
+
